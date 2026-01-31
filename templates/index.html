@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Coursera</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1>Coursera</h1>
+
+<form method="POST">
+    <label>Course Title</label>
+    <input name="course_title" required>
+
+    <label>Price (USD)</label>
+    <input type="number" step="0.01" name="price_usd" required>
+
+    <label>Rating</label>
+    <input type="number" step="0.1" name="rating" required>
+
+    <label>Students Enrolled</label>
+    <input type="number" name="students_enrolled" required>
+
+    <label>Reviews Count</label>
+    <input type="number" name="reviews_count" required>
+
+    <label>Category</label>
+    <input name="category" required>
+
+    <label>Difficulty Level</label>
+    <select name="difficulty_level">
+        <option>Beginner</option>
+        <option>Intermediate</option>
+        <option>Advanced</option>
+    </select>
+
+    <button type="submit">Predict</button>
+</form>
+
+{% if prediction %}
+<hr>
+<h2>Predicted Success Score: {{ prediction }}</h2>
+
+<h3>GenAI Recommendations</h3>
+<ul>
+    {% for s in suggestions %}
+        <li>{{ s }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+</body>
+</html>
