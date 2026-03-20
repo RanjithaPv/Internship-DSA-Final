@@ -4,7 +4,6 @@ This project is a **Course Success Prediction** application built using **Python
 
 ## Project Details
 - Historical course and student data is collected and cleaned.
-- Features like **quiz scores, assignment submissions, forum activity, and login frequency** are used to assess engagement.
 - A **Gradient Boosting classifier** is trained to predict course success (pass/fail).
 - Users can input student data in the web app and get a **predicted outcome** for course completion.
 
